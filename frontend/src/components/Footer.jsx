@@ -72,11 +72,11 @@ const Footer = () => {
             </div>
             <div>
               <MdEmail />
-              <span>zeelab@gmail.com</span>
+              <span>hospital@gmail.com</span>
             </div>
             <div>
               <FaLocationArrow />
-              <span>Karachi, Pakistan</span>
+              <span>Mumbai, India</span>
             </div>
           </div>
         </div>
@@ -86,3 +86,6 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+

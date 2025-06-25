@@ -29,8 +29,16 @@ const AppointmentForm = () => {
     "Dermatology",
     "ENT",
   ];
+  
+const doctors=[
+  "Dr.Prashant Verma",
+  "Dr.R.K.Reddy",
+  "Dr.PK Sharma",
+  "Dr.Shahi Ranjan"
+]
 
-  const [doctors, setDoctors] = useState([]);
+
+  // const [doctors, setDoctors] = useState([]);
   useEffect(() => {
     const fetchDoctors = async () => {
       const { data } = await axios.get(
@@ -58,8 +66,8 @@ const AppointmentForm = () => {
           gender,
           appointment_date: appointmentDate,
           department,
-          doctor_firstName: doctorFirstName,
-          doctor_lastName: doctorLastName,
+          // doctor_firstName: doctorFirstName,
+          // doctor_lastName: doctorLastName,
           hasVisited: hasVisitedBool,
           address,
         },
@@ -78,8 +86,8 @@ const AppointmentForm = () => {
         setGender(""),
         setAppointmentDate(""),
         setDepartment(""),
-        setDoctorFirstName(""),
-        setDoctorLastName(""),
+        // setDoctorFirstName(""),
+        // setDoctorLastName(""),
         setHasVisited(""),
         setAddress("");
     } catch (error) {
@@ -123,7 +131,7 @@ const AppointmentForm = () => {
           <div>
             <input
               type="number"
-              placeholder="NIC"
+              placeholder="Aadhaar Number"
               value={nic}
               onChange={(e) => setNic(e.target.value)}
             />
@@ -164,7 +172,7 @@ const AppointmentForm = () => {
                 );
               })}
             </select>
-            <select
+            {/* <select
               value={`${doctorFirstName} ${doctorLastName}`}
               onChange={(e) => {
                 const [firstName, lastName] = e.target.value.split(" ");
@@ -175,7 +183,7 @@ const AppointmentForm = () => {
             >
               <option value="">Select Doctor</option>
               {doctors
-                .filter((doctor) => doctor.doctorDepartment === department)
+                
                 .map((doctor, index) => (
                   <option
                     value={`${doctor.firstName} ${doctor.lastName}`}
@@ -184,7 +192,7 @@ const AppointmentForm = () => {
                     {doctor.firstName} {doctor.lastName}
                   </option>
                 ))}
-            </select>
+            </select> */}
           </div>
           <textarea
             rows="10"
